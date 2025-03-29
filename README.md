@@ -48,6 +48,38 @@ go run main.go
 - **Singleton Pattern** → Ensures only one board instance.
 - **Factory Pattern** → Creates players dynamically (Human/AI).
 
+## 📊 UML Diagram
+Below is a UML representation of the Tic-Tac-Toe system:
+
+```
++----------------+
+|   Game        |
+|-------------- |
+| +start()      |
+| +makeMove()   |
++----------------+
+        |
+        | has a
+        v
++----------------+
+|   Board       |
+|-------------- |
+| -grid[][]     |
+| +display()    |
+| +checkWin()   |
++----------------+
+        |
+        | uses
+        v
++----------------+
+|   Player      |
+|-------------- |
+| -name         |
+| -symbol       |
+| +makeMove()   |
++----------------+
+```
+
 ## 📜 License
 This project is open-source and free to use.
 
@@ -55,5 +87,5 @@ This project is open-source and free to use.
 Feel free to contribute! Open issues, suggest features, or create pull requests.
 
 ## 📧 Contact
-For any queries, reach out at **your-email@example.com**.
+For any queries, reach out at **vikas82393@gmail.com**.
 
