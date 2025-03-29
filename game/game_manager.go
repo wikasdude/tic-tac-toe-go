@@ -2,6 +2,7 @@ package game
 
 import (
 	"fmt"
+	"tic_tac_toe/factory"
 	"tic_tac_toe/model"
 )
 
@@ -11,9 +12,12 @@ type Game struct {
 	currentPlayer int
 }
 
-func NewGame(player1, player2 *model.Player, boardSize int) *Game {
+func NewGame(player1Type, player1Name, player1Symbol, player2Type, player2Name, player2Symbol string, boardSize int) *Game {
+	player1 := factory.NewPlayerFactory(player1Type, player1Name, player1Symbol)
+	player2 := factory.NewPlayerFactory(player2Type, player2Name, player2Symbol)
+
 	return &Game{
-		board:   model.NewBoard(boardSize),
+		board:   model.NewBoard(boardSize), // Singleton Board
 		players: []*model.Player{player1, player2},
 	}
 }
